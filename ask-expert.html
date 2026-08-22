@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask an Expert — CaSync</title>
+<meta name="description" content="Submit your accounting, tax, or financial-markets question. It's routed to a professional CA, CS, CPA or IFRS expert from our panel.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="brand" href="index.html">Ca<span>Sync</span></a>
+    <button class="navtoggle" aria-label="Menu">MENU</button>
+    <ul class="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="india.html">India</a></li>
+      <li><a href="global.html">Global</a></li>
+      <li><a href="ask-expert.html" class="active">Ask an Expert</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="form-shell">
+  <div class="wrap form-grid">
+    <div>
+      <span class="eyebrow" style="color: rgba(255,255,255,0.5);">Ask CaSync</span>
+      <h2>Ask a CA, CS, CPA or IFRS expert</h2>
+      <p class="lede">Submit your question below. It goes to our panel of independent professional experts — not answered automatically. We reply by email, usually within 2–3 working days.</p>
+
+      <div class="experts-note">
+        CaSync connects you with independent professionals. CaSync is not itself providing the advice —
+        each answer comes from the responding expert, who is responsible for it. This is general information,
+        not a substitute for a formal paid engagement for advice specific to your situation. See our
+        <a href="disclaimer.html" style="color:#fff; text-decoration: underline;">Disclaimer</a> for details.
+      </div>
+    </div>
+
+    <div class="card-form">
+      <form id="ask-expert-form" action="https://formspree.io/f/mgawqlno" method="POST">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="New question via CaSync — Ask an Expert">
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="Name" required>
+        </div>
+
+        <div class="field">
+          <label for="mobile">Mobile number</label>
+          <input type="tel" id="mobile" name="Mobile" required pattern="[0-9+\-\s]{8,15}" placeholder="+91 XXXXX XXXXX">
+        </div>
+
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="Email" required>
+        </div>
+
+        <div class="field">
+          <label for="category">Question category</label>
+          <select id="category" name="Category" required>
+            <option value="">Select one</option>
+            <option>Tax &amp; GST (India)</option>
+            <option>Company Law / CS matters</option>
+            <option>IFRS / Global accounting</option>
+            <option>Investing &amp; financial markets</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="query">Your question</label>
+          <textarea id="query" name="Question" required placeholder="Give as much detail as you can — figures, dates, and what you're trying to decide."></textarea>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" required>
+          <label for="consent" style="text-transform:none; font-family: var(--sans); letter-spacing:0; font-size:0.84rem;">I agree to CaSync storing my name, mobile number and email to respond to this question, as described in the <a href="privacy.html">Privacy Policy</a>.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send my question</button>
+        <div id="form-msg" class="form-msg"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="index.html" style="font-size:1.1rem;">Ca<span>Sync</span></a>
+    </div>
+    <ul class="foot-links">
+      <li><a href="india.html">India</a></li>
+      <li><a href="global.html">Global</a></li>
+      <li><a href="ask-expert.html">Ask an Expert</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="disclaimer.html">Disclaimer</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms of Service</a></li>
+    </ul>
+  </div>
+  <div class="wrap foot-note">© <span id="year"></span> CaSync. Content is general information, not professional advice specific to your situation.</div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
